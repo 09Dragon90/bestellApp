@@ -5,3 +5,8 @@
   --main-orange: #ff8000;
   --hover: #fee5cb;
 }
+
+.container {
+  max-width: 1920px;
+  padding: 0 24px;
+}
