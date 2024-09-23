@@ -5,13 +5,9 @@ main {
 }
 
 .sectionContent {
-  width: calc(100%-300px);
+  width: calc(100% - 300px);
 }
 
-.sectionContent img {
-  width: 100%;
-}
-
-.sectionBasket {
-  width: 300px;
+.fontWeightBold {
+  font-weight: 700;
 }

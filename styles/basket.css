@@ -1,0 +1,69 @@
+.sectionBasket {
+  width: 300px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* TODO Schatten zu Content hinzufügen */
+}
+
+.seperator {
+  margin-top: 16px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--footer);
+}
+
+.cardBasket {
+  width: 90%;
+  margin-top: 16px;
+}
+
+.cardBasketMenue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.cardBasketNumbers {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cardBasketQuanty {
+  width: 25px;
+  text-align: center;
+}
+
+.basketMenueIcons {
+  width: 25px;
+  height: 25px;
+  margin: 8px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basketMenueIcons:hover {
+  border-color: var(--main-orange);
+}
+
+.basketMenueIcons img {
+  width: 70%;
+}
+
+.priceBasket {
+  width: 90%;
+  margin-top: 16px;
+}
+
+.priceBasketRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}

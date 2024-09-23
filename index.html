@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/standard.css" />
     <link rel="stylesheet" href="./styles/header_footer.css" />
+    <link rel="stylesheet" href="./styles/basket.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Bestell App</title>
   </head>
@@ -19,7 +20,61 @@
     </header>
     <main>
       <section class="sectionContent"></section>
-      <section class="sectionBasket"></section>
+      <section class="sectionBasket">
+        <h2>Warenkorb</h2>
+        <div class="seperator"></div>
+        <div class="cardBasket">
+          <h4>Pizza Salamie</h4>
+          <div class="cardBasketMenue">
+            <div class="cardBasketNumbers">
+              <div class="basketMenueIcons">
+                <img src="./assets/icons/minus-solid.svg" alt="Button Minus" />
+              </div>
+              <p class="cardBasketQuanty">7x</p>
+              <div class="basketMenueIcons">
+                <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
+              </div>
+            </div>
+            <p>41,23 €</p>
+            <div class="basketMenueIcons">
+              <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
+            </div>
+          </div>
+        </div>
+        <div class="cardBasket">
+          <h4>Pizza Salamie</h4>
+          <div class="cardBasketMenue">
+            <div class="cardBasketNumbers">
+              <div class="basketMenueIcons">
+                <img src="./assets/icons/minus-solid.svg" alt="Button Minus" />
+              </div>
+              <p class="cardBasketQuanty">7x</p>
+              <div class="basketMenueIcons">
+                <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
+              </div>
+            </div>
+            <p>41,23 €</p>
+            <div class="basketMenueIcons">
+              <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
+            </div>
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="priceBasket">
+          <div class="priceBasketRow">
+            <p>Zwischensumme</p>
+            <p>412,23 €</p>
+          </div>
+          <div class="priceBasketRow">
+            <p>Versand</p>
+            <p>0,00 €</p>
+          </div>
+          <div class="priceBasketRow fontWeightBold">
+            <p>Gesamt</p>
+            <p>412,23 €</p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>...Inhalter Footer...</footer>
     <script src="./scripts/db.js"></script>
