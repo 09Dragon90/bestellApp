@@ -10,3 +10,17 @@
   max-width: 1920px;
   padding: 0 24px;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-orange);
+  border-radius: 5px;
+}
