@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.sectionContent {
+  width: calc(100%-300px);
+}
+
+.sectionContent img {
+  width: 100%;
+}
+
+.sectionBasket {
+  width: 300px;
+}
