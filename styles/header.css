@@ -3,11 +3,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 80px;
 }
 
 .headerLogo {
   height: 50px;
-  margin: 16px 0;
 }
 
 .headerMenue {
