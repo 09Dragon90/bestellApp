@@ -1,4 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+
+  --main-orange: #ff8000;
+  --hover: #fee5cb;
 }
