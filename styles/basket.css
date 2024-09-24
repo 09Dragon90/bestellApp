@@ -1,11 +1,11 @@
 .sectionBasket {
   width: 300px;
-  margin-bottom: 16px;
-  margin-top: 16px;
+  padding: 16px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* TODO Schatten zu Content hinzufügen */
+  box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .seperator {
