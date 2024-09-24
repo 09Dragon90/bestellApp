@@ -1,0 +1,91 @@
+.contentHeader {
+  width: 100%;
+}
+
+.contentHeaderImgWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.contentHeaderImg {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.contentHeaderLogo {
+  width: 90px;
+  border-radius: 50%;
+  border: 5px solid white;
+  position: absolute;
+  top: 100px;
+}
+
+.contentHeaderName {
+  margin-top: 16px;
+  margin-bottom: 5px;
+}
+
+.textEvaluation {
+  color: var(--main-orange);
+  font-size: 14px;
+}
+
+.categories {
+  margin-top: 16px;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.categoriesList {
+  display: flex;
+  gap: 24px;
+}
+
+.categoriesList a {
+  font-weight: 700;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.dishesCategorie {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.containerDish {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 8px;
+  position: relative;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.containerDish:hover {
+  background-color: var(--hover);
+}
+
+.dishAddToBasket {
+  height: 40px;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.containerDishIngredient {
+  margin-top: 16px;
+}
+
+.containerDishPrice {
+  margin-top: 8px;
+  color: var(--main-orange);
+  font-weight: 700;
+}
