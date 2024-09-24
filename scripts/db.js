@@ -3,9 +3,9 @@ let dishes = [
     category: "Pizza",
     dine: [
       {
-        name: "Pizza Salamie",
+        name: "Pizza Salami",
         price: 11.99,
-        ingredient: ["Tomatensoße", "Salamie", "Käse"],
+        ingredient: ["Tomatensoße", "Salami", "Käse"],
       },
       {
         name: "Pizza Margherita",
