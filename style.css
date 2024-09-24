@@ -11,3 +11,7 @@ main {
 .fontWeightBold {
   font-weight: 700;
 }
+
+body {
+  font-family: "Roboto", "sans-serif";
+}
