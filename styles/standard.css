@@ -8,8 +8,10 @@
   scroll-behavior: smooth;
 }
 
+/* TODO max-width umstellen auf 1440px*/
+/* TODO max-width klappt nicht richtig.*/
 .container {
-  max-width: 1920px;
+  max-width: 1440px;
   padding: 0 24px;
 }
 

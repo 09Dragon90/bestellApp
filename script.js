@@ -27,3 +27,16 @@ function toggelBasket() {
     basketIfOpen = true;
   }
 }
+
+// TODO Basket rendern
+// TODO Dish in Basket speichern
+function addToBasket(id) {
+  console.log(id);
+}
+
+// TODO Basket speichern
+// TODO Basket laden
+// TODO Basket Preise berechnen
+// TODO Basket umschalter Liefern/Abholen
+// TODO Basket plus/minus Gericht
+// TODO Basket Gericht löschen
