@@ -48,9 +48,9 @@ function getTemplateDishesCategorie(arrayOfCategories) {
   for (let i = 0; i < arrayOfCategories.length; i++) {
     template += `<h2 id="category${arrayOfCategories[i].category}" class="dishesCategorie">${arrayOfCategories[i].category}</h2>`;
     for (let iDine = 0; iDine < arrayOfCategories[i].dine.length; iDine++) {
-      template += ` <div class="containerDish" onclick="addToBasket(${
+      template += ` <div class="containerDish" onclick="addToBasket('${
         arrayOfCategories[i].dine[iDine].id
-      })">
+      }')">
         ${getTemplateDish(arrayOfCategories[i].dine[iDine])}`;
       template += `</div>`;
     }
