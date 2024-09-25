@@ -1,5 +1,15 @@
 let basketIfOpen = true;
 
+function init() {
+  renderContent();
+}
+
+function renderContent() {
+  let sectionContentRef = document.getElementById("sectionContent");
+  sectionContentRef.innerHTML = "";
+  sectionContentRef.innerHTML = getTemplateContent(dishes);
+}
+
 /**
  * Open and Close the Basket
  */
