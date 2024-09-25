@@ -4,14 +4,14 @@ main {
   width: 100%;
 }
 
-.sectionContent {
-  width: calc(100% - 300px);
-}
-
 .fontWeightBold {
   font-weight: 700;
 }
 
 body {
   font-family: "Roboto", "sans-serif";
+}
+
+.dNone {
+  display: none;
 }
