@@ -6,6 +6,13 @@
   flex-direction: column;
   align-items: center;
   box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.sticky {
+  width: 100%;
+  position: sticky;
+  top: 16px;
 }
 
 .seperator {
