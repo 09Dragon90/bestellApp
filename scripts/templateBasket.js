@@ -1,64 +1,77 @@
+/**
+ * Creates the Template of the Basket
+ * @param {[]} basket Array of Dine in the Basket
+ * @returns HTML Template for Basket
+ */
 function getTemplateBasketDesktop(basket) {
+  let subtotal = calculatSubtotal(basket);
+  let shippingCosts = 5;
+  let total = subtotal + shippingCosts;
   let template = `<div class="sticky">
           <h2>Warenkorb</h2>
           <div class="seperator"></div>
-          <div class="cardBasket">
-            <h4>Pizza Salamie</h4>
-            <div class="cardBasketMenue">
-              <div class="cardBasketNumbers">
-                <div class="basketMenueIcons">
-                  <img
-                    src="./assets/icons/minus-solid.svg"
-                    alt="Button Minus"
-                  />
-                </div>
-                <p class="cardBasketQuanty">7x</p>
-                <div class="basketMenueIcons">
-                  <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
-                </div>
-              </div>
-              <p>41,23 €</p>
-              <div class="basketMenueIcons">
-                <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
-              </div>
-            </div>
-          </div>
-          <div class="cardBasket">
-            <h4>Pizza Salamie</h4>
-            <div class="cardBasketMenue">
-              <div class="cardBasketNumbers">
-                <div class="basketMenueIcons">
-                  <img
-                    src="./assets/icons/minus-solid.svg"
-                    alt="Button Minus"
-                  />
-                </div>
-                <p class="cardBasketQuanty">7x</p>
-                <div class="basketMenueIcons">
-                  <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
-                </div>
-              </div>
-              <p>41,23 €</p>
-              <div class="basketMenueIcons">
-                <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
-              </div>
-            </div>
-          </div>
+          ${getCardsBasket(basket)}
+          
           <div class="seperator"></div>
           <div class="priceBasket">
             <div class="priceBasketRow">
               <p>Zwischensumme</p>
-              <p>412,23 €</p>
+              <p>${formatPrice(subtotal)} €</p>
             </div>
             <div class="priceBasketRow">
               <p>Versand</p>
-              <p>0,00 €</p>
+              <p>${formatPrice(shippingCosts)} €</p>
             </div>
             <div class="priceBasketRow fontWeightBold">
               <p>Gesamt</p>
-              <p>412,23 €</p>
+              <p>${formatPrice(total)} €</p>
             </div>
           </div>
         </div>`;
   return template;
+}
+
+function getCardsBasket(basket) {
+  let template = "";
+  for (let i = 0; i < basket.length; i++) {
+    template += `<div class="cardBasket">
+            <h4>${basket[i].name}</h4>
+            <div class="cardBasketMenue">
+              <div class="cardBasketNumbers">
+                <div class="basketMenueIcons">
+                  <img
+                    src="./assets/icons/minus-solid.svg"
+                    alt="Button Minus"
+                  />
+                </div>
+                <p class="cardBasketQuanty">${basket[i].quanty}x</p>
+                <div class="basketMenueIcons">
+                  <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
+                </div>
+              </div>
+              <p>${calculatPriceDine(basket[i].price, basket[i].quanty)} €</p>
+              <div class="basketMenueIcons">
+                <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
+              </div>
+            </div>
+          </div>`;
+  }
+  return template;
+}
+
+function calculatPriceDine(price, quanty) {
+  let priceDine = price * quanty;
+  return formatPrice(priceDine);
+}
+
+function formatPrice(price) {
+  return Number(price).toFixed(2).toString().replace(".", ",");
+}
+
+function calculatSubtotal(basket) {
+  let priceSubtotal = 0;
+  for (let i = 0; i < basket.length; i++) {
+    priceSubtotal += basket[i].price * basket[i].quanty;
+  }
+  return priceSubtotal;
 }

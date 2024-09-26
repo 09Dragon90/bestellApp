@@ -1,5 +1,27 @@
 let basketIfOpen = true;
-let basket = [];
+let basket = [
+  {
+    id: "PIZ003",
+    name: "Pizza Funghi",
+    price: 12.49,
+    ingredient: ["Tomatensoße", "Pilze", "Käse"],
+    quanty: 3,
+  },
+  {
+    id: "PIZ004",
+    name: "Pizza Diavolo",
+    price: 13.99,
+    ingredient: ["Tomatensoße", "Peperoni", "Chili", "Käse"],
+    quanty: 1,
+  },
+  {
+    id: "PIZ005",
+    name: "Pizza Quattro Stagioni",
+    price: 14.49,
+    ingredient: ["Tomatensoße", "Schinken", "Pilze", "Artischocken", "Oliven"],
+    quanty: 2,
+  },
+];
 
 function init() {
   renderContent();
@@ -12,7 +34,6 @@ function renderContent() {
   sectionContentRef.innerHTML = getTemplateContent(dishes);
 }
 
-// TODO Basket rendern
 function renderBasketDestop() {
   let sectionBasketDesktopRef = document.getElementById("sectionBasketDesktop");
   sectionBasketDesktopRef.innerHTML = "";
@@ -46,6 +67,7 @@ function addToBasket(id) {
     let dineWithQuanty = { ...dine, quanty: 1 };
     basket.push(dineWithQuanty);
   }
+  renderBasketDestop();
 }
 
 /**
@@ -64,7 +86,6 @@ function findDine(id) {
 
 // TODO Basket speichern
 // TODO Basket laden
-// TODO Basket Preise berechnen
 // TODO Basket umschalter Liefern/Abholen
 // TODO Basket plus/minus Gericht
 // TODO Basket Gericht löschen
