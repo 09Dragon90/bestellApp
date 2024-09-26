@@ -1,6 +1,7 @@
 let dishes = [
   {
     category: "Pizza",
+    id: "PIZ",
     dine: [
       {
         id: "PIZ001",
@@ -42,6 +43,7 @@ let dishes = [
   },
   {
     category: "Pasta",
+    id: "PAS",
     dine: [
       {
         id: "PAS001",
@@ -77,6 +79,7 @@ let dishes = [
   },
   {
     category: "Salat",
+    id: "SAL",
     dine: [
       {
         id: "SAL001",
@@ -106,6 +109,7 @@ let dishes = [
   },
   {
     category: "Dessert",
+    id: "DES",
     dine: [
       {
         id: "DES001",

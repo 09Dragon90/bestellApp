@@ -1,4 +1,5 @@
 let basketIfOpen = true;
+let basket = [];
 
 function init() {
   renderContent();
@@ -29,9 +30,30 @@ function toggelBasket() {
 }
 
 // TODO Basket rendern
-// TODO Dish in Basket speichern
+
 function addToBasket(id) {
-  console.log(id);
+  if (basket.some((dine) => dine.id === id)) {
+    let indexOfDine = basket.findIndex((dine) => dine.id === id);
+    basket[indexOfDine].quanty++;
+  } else {
+    let dine = findDine(id);
+    let dineWithQuanty = { ...dine, quanty: 1 };
+    basket.push(dineWithQuanty);
+  }
+}
+
+/**
+ *
+ * @param {string} id Id of the Dine
+ * @returns The Obj of Dine
+ */
+function findDine(id) {
+  let idCategorie = id.slice(0, 3);
+  let indexOfCategorie = dishes.findIndex((x) => x.id === idCategorie);
+  let idNumber = id.slice(3, 7);
+  let indexOfDine = Number.parseInt(idNumber) - 1;
+  let dine = dishes[indexOfCategorie].dine[indexOfDine];
+  return dine;
 }
 
 // TODO Basket speichern
