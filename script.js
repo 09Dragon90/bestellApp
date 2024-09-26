@@ -92,3 +92,4 @@ function dineDeleteFromBasket(id) {
 // TODO Basket speichern
 // TODO Basket laden
 // TODO Basket umschalter Liefern/Abholen
+// TODO Function dokumentieren
