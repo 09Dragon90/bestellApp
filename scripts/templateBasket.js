@@ -21,7 +21,7 @@ function getTemplateBasketDesktop(basket) {
               <p>${formatPrice(subtotal)} €</p>
             </div>
             <div class="priceBasketRow">
-              <p>Versand</p>
+              <p>Lieferung</p>
               <p>${formatPrice(shippingCosts)} €</p>
             </div>
             <div class="priceBasketRow fontWeightBold">
