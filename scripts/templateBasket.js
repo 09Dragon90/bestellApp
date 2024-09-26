@@ -38,19 +38,23 @@ function getCardsBasket(basket) {
             <h4>${basket[i].name}</h4>
             <div class="cardBasketMenue">
               <div class="cardBasketNumbers">
-                <div class="basketMenueIcons">
+                <div class="basketMenueIcons" onclick="changeDineQuanty('${
+                  basket[i].id
+                }', false)">
                   <img
                     src="./assets/icons/minus-solid.svg"
                     alt="Button Minus"
                   />
                 </div>
                 <p class="cardBasketQuanty">${basket[i].quanty}x</p>
-                <div class="basketMenueIcons">
+                <div class="basketMenueIcons" onclick="changeDineQuanty('${
+                  basket[i].id
+                }', true)">
                   <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
                 </div>
               </div>
               <p>${calculatPriceDine(basket[i].price, basket[i].quanty)} €</p>
-              <div class="basketMenueIcons">
+              <div class="basketMenueIcons" >
                 <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
               </div>
             </div>

@@ -60,8 +60,7 @@ function toggelBasket() {
 
 function addToBasket(id) {
   if (basket.some((dine) => dine.id === id)) {
-    let indexOfDine = basket.findIndex((dine) => dine.id === id);
-    basket[indexOfDine].quanty++;
+    changeDineQuanty(id, true);
   } else {
     let dine = findDine(id);
     let dineWithQuanty = { ...dine, quanty: 1 };
@@ -84,8 +83,26 @@ function findDine(id) {
   return dine;
 }
 
+/**
+ * Change the Quanty of the Dine
+ * @param {string} id Id of the Dine
+ * @param {boolean} increase Increase = True, Decrease = False
+ */
+function changeDineQuanty(id, increase) {
+  let indexOfDine = basket.findIndex((dine) => dine.id === id);
+  if (increase) {
+    basket[indexOfDine].quanty++;
+  } else {
+    basket[indexOfDine].quanty--;
+  }
+  renderBasketDestop();
+}
+
+function dineDeleteFromBasket(id) {
+  let indexOfDine = basket.findIndex((dine) => dine.id === id);
+}
+
 // TODO Basket speichern
 // TODO Basket laden
 // TODO Basket umschalter Liefern/Abholen
-// TODO Basket plus/minus Gericht
 // TODO Basket Gericht löschen
