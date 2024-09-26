@@ -27,7 +27,7 @@ function renderBasketDestop() {
  */
 function toggelBasket() {
   let sectionContentRef = document.getElementById("sectionContent");
-  let sectionBasketRef = document.getElementById("sectionBasket");
+  let sectionBasketRef = document.getElementById("sectionBasketDesktop");
 
   if (basketIfOpen) {
     sectionBasketRef.classList.add("dNone");
