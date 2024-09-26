@@ -54,7 +54,9 @@ function getCardsBasket(basket) {
                 </div>
               </div>
               <p>${calculatPriceDine(basket[i].price, basket[i].quanty)} €</p>
-              <div class="basketMenueIcons" >
+              <div class="basketMenueIcons" onclick="dineDeleteFromBasket('${
+                basket[i].id
+              }')">
                 <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
               </div>
             </div>

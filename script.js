@@ -25,6 +25,10 @@ let basket = [
 
 function init() {
   renderContent();
+  renderBaskets();
+}
+
+function renderBaskets() {
   renderBasketDestop();
 }
 
@@ -66,7 +70,7 @@ function addToBasket(id) {
     let dineWithQuanty = { ...dine, quanty: 1 };
     basket.push(dineWithQuanty);
   }
-  renderBasketDestop();
+  renderBaskets();
 }
 
 /**
@@ -94,15 +98,19 @@ function changeDineQuanty(id, increase) {
     basket[indexOfDine].quanty++;
   } else {
     basket[indexOfDine].quanty--;
+    if (basket[indexOfDine].quanty < 1) {
+      dineDeleteFromBasket(id);
+    }
   }
-  renderBasketDestop();
+  renderBaskets();
 }
 
 function dineDeleteFromBasket(id) {
   let indexOfDine = basket.findIndex((dine) => dine.id === id);
+  basket.splice(indexOfDine, 1);
+  renderBaskets();
 }
 
 // TODO Basket speichern
 // TODO Basket laden
 // TODO Basket umschalter Liefern/Abholen
-// TODO Basket Gericht löschen
