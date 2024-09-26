@@ -74,3 +74,21 @@
   justify-content: space-between;
   margin-top: 5px;
 }
+
+.emptyBasket {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  gap: 16px;
+}
+
+.emptyBasket img {
+  width: 50%;
+}
+
+.emptyBasket p {
+  text-align: center;
+  color: lightgray;
+}

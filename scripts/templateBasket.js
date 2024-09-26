@@ -7,7 +7,9 @@ function getTemplateBasketDesktop(basket) {
   let subtotal = calculatSubtotal(basket);
   let shippingCosts = 5;
   let total = subtotal + shippingCosts;
-  let template = `<div class="sticky">
+  let template = "";
+  if (basket.length > 0) {
+    template = `<div class="sticky">
           <h2>Warenkorb</h2>
           <div class="seperator"></div>
           ${getCardsBasket(basket)}
@@ -28,6 +30,19 @@ function getTemplateBasketDesktop(basket) {
             </div>
           </div>
         </div>`;
+  } else {
+    template = `<div class="sticky">
+    <h2>Warenkorb</h2>
+    <div class="seperator"></div>
+    <div class="emptyBasket">
+            <img
+              src="./assets/icons/bag-shopping-solid.svg"
+              alt="ShoppingBag"
+            />
+            <p>Wähle leckere Gerichte aus der Karte und bestelle dein Menü</p>
+          </div>
+        </div>`;
+  }
   return template;
 }
 
