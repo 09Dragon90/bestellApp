@@ -3,12 +3,20 @@ let basket = [];
 
 function init() {
   renderContent();
+  renderBasketDestop();
 }
 
 function renderContent() {
   let sectionContentRef = document.getElementById("sectionContent");
   sectionContentRef.innerHTML = "";
   sectionContentRef.innerHTML = getTemplateContent(dishes);
+}
+
+// TODO Basket rendern
+function renderBasketDestop() {
+  let sectionBasketDesktopRef = document.getElementById("sectionBasketDesktop");
+  sectionBasketDesktopRef.innerHTML = "";
+  sectionBasketDesktopRef.innerHTML = getTemplateBasketDesktop(basket);
 }
 
 /**
@@ -28,8 +36,6 @@ function toggelBasket() {
     basketIfOpen = true;
   }
 }
-
-// TODO Basket rendern
 
 function addToBasket(id) {
   if (basket.some((dine) => dine.id === id)) {
