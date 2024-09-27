@@ -80,15 +80,22 @@ function getCardsBasket(basket) {
   return template;
 }
 
+/**
+ * Calculate the total price of dines
+ * @param {Number} price Price of the Dine
+ * @param {Number} quanty Quanty of the Dine
+ * @returns The total Price of Dines
+ */
 function calculatPriceDine(price, quanty) {
   let priceDine = price * quanty;
   return formatPrice(priceDine);
 }
 
-function formatPrice(price) {
-  return Number(price).toFixed(2).toString().replace(".", ",");
-}
-
+/**
+ * Calculate the total price of basket
+ * @param {[]} basket Array of Basket
+ * @returns the total price of basket
+ */
 function calculatSubtotal(basket) {
   let priceSubtotal = 0;
   for (let i = 0; i < basket.length; i++) {
