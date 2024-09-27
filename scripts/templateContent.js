@@ -72,14 +72,15 @@ function getTemplateDish(dine) {
   return template;
 }
 
+/**
+ *
+ * @param {[string]} ingredient Array with all ingredients
+ * @returns a String with all ingredients
+ */
 function formatIngredient(ingredient) {
   let ingredientList = ingredient[0];
   for (let i = 1; i < ingredient.length; i++) {
     ingredientList += ", " + ingredient[i];
   }
   return ingredientList;
-}
-
-function formatPrice(price) {
-  return Number(price).toFixed(2).toString().replace(".", ",");
 }

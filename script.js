@@ -23,6 +23,15 @@ function renderBasketDestop() {
 }
 
 /**
+ * Format the Price
+ * @param {Number} price Price to Formated
+ * @returns Price in fomrat xx,xx
+ */
+function formatPrice(price) {
+  return Number(price).toFixed(2).toString().replace(".", ",");
+}
+
+/**
  * Open and Close the Basket
  */
 function toggelBasket() {
@@ -40,6 +49,10 @@ function toggelBasket() {
   }
 }
 
+/**
+ * Add or increas the dine in Basket
+ * @param {string} id Id of the Dine
+ */
 function addToBasket(id) {
   if (basket.some((dine) => dine.id === id)) {
     changeDineQuanty(id, true);
@@ -83,6 +96,10 @@ function changeDineQuanty(id, increase) {
   renderBaskets();
 }
 
+/**
+ * Delet the Dine from the Basket
+ * @param {string} id Id of the Dine
+ */
 function dineDeleteFromBasket(id) {
   let indexOfDine = basket.findIndex((dine) => dine.id === id);
   basket.splice(indexOfDine, 1);
