@@ -1,3 +1,5 @@
+let shippingCosts = 5;
+
 /**
  * Creates the Template of the Basket
  * @param {[]} basket Array of Dine in the Basket
@@ -5,15 +7,14 @@
  */
 function getTemplateBasketDesktop(basket) {
   let subtotal = calculatSubtotal(basket);
-  let shippingCosts = 5;
+
   let total = subtotal + shippingCosts;
   let template = "";
   if (basket.length > 0) {
     template = `<div class="sticky">
           <h2>Warenkorb</h2>
           <div class="seperator"></div>
-          ${getCardsBasket(basket)}
-          
+          ${getCardsBasket(basket)}          
           <div class="seperator"></div>
           <div class="priceBasket">
             <div class="priceBasketRow">
@@ -34,21 +35,14 @@ function getTemplateBasketDesktop(basket) {
     template = `<div class="sticky">
     <h2>Warenkorb</h2>
     <div class="seperator"></div>
-    <div class="emptyBasket">
-            <img
-              src="./assets/icons/bag-shopping-solid.svg"
-              alt="ShoppingBag"
-            />
-            <p>Wähle leckere Gerichte aus der Karte und bestelle dein Menü</p>
-          </div>
-        </div>`;
+    ${getEmptyBasket()}
+    </div>`;
   }
   return template;
 }
 
 function getTemplateBasketMobile(basket) {
   let subtotal = calculatSubtotal(basket);
-  let shippingCosts = 5;
   let total = subtotal + shippingCosts;
   let template = "";
   if (basket.length > 0) {
@@ -78,16 +72,20 @@ function getTemplateBasketMobile(basket) {
     <div class="btnBasketMobile" onclick="toggelBasketMobile()">
         <h1>Warenkorb</h1>
       </div>    
-    <div class="emptyBasket">
+    ${getEmptyBasket()}
+        `;
+  }
+  return template;
+}
+
+function getEmptyBasket() {
+  return `<div class="emptyBasket">
             <img
               src="./assets/icons/bag-shopping-solid.svg"
               alt="ShoppingBag"
             />
             <p>Wähle leckere Gerichte aus der Karte und bestelle dein Menü</p>
-          </div>
-        `;
-  }
-  return template;
+          </div>`;
 }
 
 function getCardsBasket(basket) {
