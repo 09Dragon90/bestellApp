@@ -8,6 +8,7 @@ function init() {
 
 function renderBaskets() {
   renderBasketDestop();
+  renderBasketMobile();
 }
 
 function renderContent() {
@@ -20,6 +21,12 @@ function renderBasketDestop() {
   let sectionBasketDesktopRef = document.getElementById("sectionBasketDesktop");
   sectionBasketDesktopRef.innerHTML = "";
   sectionBasketDesktopRef.innerHTML = getTemplateBasketDesktop(basket);
+}
+
+function renderBasketMobile() {
+  let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
+  sectionBasketMobileRef.innerHTML = "";
+  sectionBasketMobileRef.innerHTML = getTemplateBasketMobile(basket);
 }
 
 /**
@@ -47,6 +54,11 @@ function toggelBasket() {
     sectionContentRef.classList.remove("fullContent");
     basketIfOpen = true;
   }
+}
+
+function toggelBasketMobile() {
+  let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
+  sectionBasketMobileRef.classList.toggle("sectionBasketMobileOpen");
 }
 
 /**

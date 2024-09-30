@@ -26,3 +26,12 @@ footer {
   align-items: center;
   color: white;
 }
+
+@media (max-width: 650px) {
+  .headerMenue {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+}

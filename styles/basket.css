@@ -1,6 +1,5 @@
-.sectionBasket {
+.sectionBasketDesktop {
   width: 300px;
-  padding: 16px;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -91,4 +90,49 @@
 .emptyBasket p {
   text-align: center;
   color: lightgray;
+}
+
+/* Basket Mobile */
+
+.sectionBasketMobile {
+  width: 100%;
+  height: 80px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+}
+
+.sectionBasketMobileOpen {
+  background-color: white;
+  height: 100%;
+  overflow: auto;
+}
+
+.btnBasketMobile {
+  width: 90%;
+  height: 60px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: blue;
+  color: white;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.btnBasketMobile h1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 650px) {
+  .sectionBasketDesktop {
+    display: none;
+  }
+
+  .sectionBasketMobile {
+    display: flex;
+  }
 }

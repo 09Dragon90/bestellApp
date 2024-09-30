@@ -46,6 +46,50 @@ function getTemplateBasketDesktop(basket) {
   return template;
 }
 
+function getTemplateBasketMobile(basket) {
+  let subtotal = calculatSubtotal(basket);
+  let shippingCosts = 5;
+  let total = subtotal + shippingCosts;
+  let template = "";
+  if (basket.length > 0) {
+    template = `
+          <div class="btnBasketMobile" onclick="toggelBasketMobile()">
+        <h1>Warenkorb</h1>
+      </div>
+          ${getCardsBasket(basket)}          
+          <div class="seperator"></div>
+          <div class="priceBasket">
+            <div class="priceBasketRow">
+              <p>Zwischensumme</p>
+              <p>${formatPrice(subtotal)} €</p>
+            </div>
+            <div class="priceBasketRow">
+              <p>Lieferung</p>
+              <p>${formatPrice(shippingCosts)} €</p>
+            </div>
+            <div class="priceBasketRow fontWeightBold">
+              <p>Gesamt</p>
+              <p>${formatPrice(total)} €</p>
+            </div>
+          </div>
+        `;
+  } else {
+    template = `
+    <div class="btnBasketMobile" onclick="toggelBasketMobile()">
+        <h1>Warenkorb</h1>
+      </div>    
+    <div class="emptyBasket">
+            <img
+              src="./assets/icons/bag-shopping-solid.svg"
+              alt="ShoppingBag"
+            />
+            <p>Wähle leckere Gerichte aus der Karte und bestelle dein Menü</p>
+          </div>
+        `;
+  }
+  return template;
+}
+
 function getCardsBasket(basket) {
   let template = "";
   for (let i = 0; i < basket.length; i++) {
