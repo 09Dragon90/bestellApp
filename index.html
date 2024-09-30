@@ -12,6 +12,9 @@
     <title>Bestell App</title>
   </head>
   <body onload="init()">
+    <dialog onclick="closeDialog(event)" id="dialog" open>
+      <h2>Vielen Dank für deine Bestellung</h2>
+    </dialog>
     <header class="container">
       <img class="headerLogo" src="./assets/img/Logo.png" alt="Logo" />
       <img
@@ -21,11 +24,13 @@
         onclick="toggelBasket()"
       />
     </header>
+
     <main>
       <section id="sectionContent" class="sectionContent"></section>
       <section id="sectionBasketDesktop" class="sectionBasketDesktop"></section>
     </main>
     <div id="sectionBasketMobile" class="sectionBasketMobile"></div>
+
     <footer>...Inhalter Footer...</footer>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/templateBasket.js"></script>

@@ -118,6 +118,33 @@ function dineDeleteFromBasket(id) {
   renderBaskets();
 }
 
+function sendOrder() {
+  basket = [];
+
+  let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
+  sectionBasketMobileRef.classList.remove("sectionBasketMobileOpen");
+}
+
+/**
+ * Opened the Dialog
+ */
+function openDialog(nameOfPicture) {
+  dialog.showModal();
+}
+
+/**
+ * close the dialog if clicked of the ::backdrop area
+ * and stop the Autoplay
+ * @param {*} event clickevent
+ */
+function closeDialog(event) {
+  let dialog = document.getElementById("dialog");
+  let closeButton = document.getElementById("closeButton");
+  if (event.target === dialog || event.target === closeButton) {
+    dialog.close();
+  }
+}
+
 // TODO Basket speichern
 // TODO Basket laden
 // TODO Basket umschalter Liefern/Abholen
