@@ -120,29 +120,17 @@ function dineDeleteFromBasket(id) {
 
 function sendOrder() {
   basket = [];
-
   let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
   sectionBasketMobileRef.classList.remove("sectionBasketMobileOpen");
+  dialogOrder.showModal();
 }
 
 /**
- * Opened the Dialog
+ * close the dialog if clicked
  */
-function openDialog(nameOfPicture) {
-  dialog.showModal();
-}
-
-/**
- * close the dialog if clicked of the ::backdrop area
- * and stop the Autoplay
- * @param {*} event clickevent
- */
-function closeDialog(event) {
-  let dialog = document.getElementById("dialog");
-  let closeButton = document.getElementById("closeButton");
-  if (event.target === dialog || event.target === closeButton) {
-    dialog.close();
-  }
+function closeDialog() {
+  dialogOrder.close();
+  renderBaskets();
 }
 
 // TODO Basket speichern

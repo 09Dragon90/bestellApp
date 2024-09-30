@@ -16,6 +16,20 @@ body {
   display: none;
 }
 
+dialog {
+  background-color: var(--main-orange);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 8px;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(2px);
+}
+
 @media (max-width: 650px) {
   main {
     flex-direction: column;
