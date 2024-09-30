@@ -97,6 +97,23 @@
   color: lightgray;
 }
 
+.orderBasket {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.btnOrderBasket {
+  background-color: var(--main-orange);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 /* Basket Mobile */
 
 .sectionBasketMobile {

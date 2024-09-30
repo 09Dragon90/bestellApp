@@ -11,6 +11,7 @@ function getTemplateBasketDesktop(basket) {
           <div class="seperator"></div>
           ${getCardsBasket(basket)}
           ${getPrices(basket)} 
+          ${getButtonOrder()} 
         </div>`;
   } else {
     template = `<div class="sticky">
@@ -32,7 +33,8 @@ function getTemplateBasketMobile(basket) {
       <div class="containerBasket">
     ${getCardsBasket(basket)} 
         </div>
-        ${getPrices(basket)}`;
+        ${getPrices(basket)}
+        ${getButtonOrder()}`;
   } else {
     template = `
     <div class="btnBasketMobile" onclick="toggelBasketMobile()">
@@ -107,6 +109,12 @@ function getCardsBasket(basket) {
           </div>`;
   }
   return template;
+}
+
+function getButtonOrder() {
+  return `<div class="orderBasket">
+  <div class="btnOrderBasket" onclick="sendOrder()"><p>Bestellung abschicken</p></div>
+  </div>`;
 }
 
 /**
