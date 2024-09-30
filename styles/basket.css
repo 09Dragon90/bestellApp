@@ -1,6 +1,6 @@
 .sectionBasketDesktop {
   width: 300px;
-  padding: 16px;
+  padding: 16px 16px 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +12,10 @@
   width: 100%;
   position: sticky;
   top: 16px;
+}
+
+.sticky > h2 {
+  text-align: center;
 }
 
 .seperator {
@@ -66,6 +70,7 @@
 .priceBasket {
   width: 90%;
   margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .priceBasketRow {
@@ -125,6 +130,13 @@
 .btnBasketMobile h1 {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.containerBasket {
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  overflow: auto;
 }
 
 @media (max-width: 650px) {

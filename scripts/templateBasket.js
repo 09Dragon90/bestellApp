@@ -9,7 +9,8 @@ function getTemplateBasketDesktop(basket) {
     template = `<div class="sticky">
           <h2>Warenkorb</h2>
           <div class="seperator"></div>
-          ${getFilledBasket(basket)}
+          ${getCardsBasket(basket)}
+          ${getPrices(basket)} 
         </div>`;
   } else {
     template = `<div class="sticky">
@@ -28,8 +29,10 @@ function getTemplateBasketMobile(basket) {
           <div class="btnBasketMobile" onclick="toggelBasketMobile()">
         <h1>Warenkorb</h1>
       </div>
-    ${getFilledBasket(basket)}
-        `;
+      <div class="containerBasket">
+    ${getCardsBasket(basket)} 
+        </div>
+        ${getPrices(basket)}`;
   } else {
     template = `
     <div class="btnBasketMobile" onclick="toggelBasketMobile()">
@@ -41,12 +44,11 @@ function getTemplateBasketMobile(basket) {
   return template;
 }
 
-function getFilledBasket(basket) {
+function getPrices(basket) {
   let shippingCosts = 5;
   let subtotal = calculatSubtotal(basket);
   let total = subtotal + shippingCosts;
-  return `${getCardsBasket(basket)}          
-          <div class="seperator"></div>
+  return `<div class="seperator"></div>
           <div class="priceBasket">
             <div class="priceBasketRow">
               <p>Zwischensumme</p>
