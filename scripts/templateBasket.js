@@ -1,35 +1,15 @@
-let shippingCosts = 5;
-
 /**
  * Creates the Template of the Basket
  * @param {[]} basket Array of Dine in the Basket
  * @returns HTML Template for Basket
  */
 function getTemplateBasketDesktop(basket) {
-  let subtotal = calculatSubtotal(basket);
-
-  let total = subtotal + shippingCosts;
   let template = "";
   if (basket.length > 0) {
     template = `<div class="sticky">
           <h2>Warenkorb</h2>
           <div class="seperator"></div>
-          ${getCardsBasket(basket)}          
-          <div class="seperator"></div>
-          <div class="priceBasket">
-            <div class="priceBasketRow">
-              <p>Zwischensumme</p>
-              <p>${formatPrice(subtotal)} €</p>
-            </div>
-            <div class="priceBasketRow">
-              <p>Lieferung</p>
-              <p>${formatPrice(shippingCosts)} €</p>
-            </div>
-            <div class="priceBasketRow fontWeightBold">
-              <p>Gesamt</p>
-              <p>${formatPrice(total)} €</p>
-            </div>
-          </div>
+          ${getFilledBasket(basket)}
         </div>`;
   } else {
     template = `<div class="sticky">
@@ -42,15 +22,30 @@ function getTemplateBasketDesktop(basket) {
 }
 
 function getTemplateBasketMobile(basket) {
-  let subtotal = calculatSubtotal(basket);
-  let total = subtotal + shippingCosts;
   let template = "";
   if (basket.length > 0) {
     template = `
           <div class="btnBasketMobile" onclick="toggelBasketMobile()">
         <h1>Warenkorb</h1>
       </div>
-          ${getCardsBasket(basket)}          
+    ${getFilledBasket(basket)}
+        `;
+  } else {
+    template = `
+    <div class="btnBasketMobile" onclick="toggelBasketMobile()">
+        <h1>Warenkorb</h1>
+      </div>    
+    ${getEmptyBasket()}
+        `;
+  }
+  return template;
+}
+
+function getFilledBasket(basket) {
+  let shippingCosts = 5;
+  let subtotal = calculatSubtotal(basket);
+  let total = subtotal + shippingCosts;
+  return `${getCardsBasket(basket)}          
           <div class="seperator"></div>
           <div class="priceBasket">
             <div class="priceBasketRow">
@@ -65,17 +60,7 @@ function getTemplateBasketMobile(basket) {
               <p>Gesamt</p>
               <p>${formatPrice(total)} €</p>
             </div>
-          </div>
-        `;
-  } else {
-    template = `
-    <div class="btnBasketMobile" onclick="toggelBasketMobile()">
-        <h1>Warenkorb</h1>
-      </div>    
-    ${getEmptyBasket()}
-        `;
-  }
-  return template;
+          </div>`;
 }
 
 function getEmptyBasket() {
