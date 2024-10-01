@@ -16,6 +16,10 @@ body {
   display: none;
 }
 
+.noScrollbar {
+  overflow: hidden;
+}
+
 dialog {
   background-color: var(--main-orange);
   position: absolute;
