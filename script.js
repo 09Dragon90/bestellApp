@@ -105,12 +105,19 @@ function toggelBasketMobile() {
  */
 function resizeBody(event) {
   if (event.target.innerWidth > 650) {
-    let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
-    let bodyRef = document.getElementById("body");
-    sectionBasketMobileRef.classList.remove("sectionBasketMobileOpen");
-    bodyRef.classList.remove("noScrollbar");
-    basketMobileIfOpen = false;
+    closeMobileBasket();
   }
+}
+
+/**
+ * Close the Mobile Basket
+ */
+function closeMobileBasket() {
+  let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
+  let bodyRef = document.getElementById("body");
+  sectionBasketMobileRef.classList.remove("sectionBasketMobileOpen");
+  bodyRef.classList.remove("noScrollbar");
+  basketMobileIfOpen = false;
 }
 
 /**
@@ -173,8 +180,7 @@ function dineDeleteFromBasket(id) {
 function sendOrder() {
   basket = [];
   delivery = true;
-  let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
-  sectionBasketMobileRef.classList.remove("sectionBasketMobileOpen");
+  closeMobileBasket();
   dialogOrder.showModal();
 }
 
