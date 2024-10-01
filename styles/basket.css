@@ -133,11 +133,11 @@
 }
 
 .btnBasketMobile {
-  width: 90%;
+  width: 300px;
   height: 60px;
   border-radius: 8px;
   text-align: center;
-  background-color: blue;
+  background-color: rgb(0, 166, 255);
   color: white;
   margin-top: 16px;
   margin-bottom: 16px;
