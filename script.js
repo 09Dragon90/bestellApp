@@ -160,7 +160,4 @@ function closeDialog() {
   renderBaskets();
 }
 
-// TODO Basket speichern
-// TODO Basket laden
 // TODO Basket umschalter Liefern/Abholen
-// TODO Basket mit Timer ???
