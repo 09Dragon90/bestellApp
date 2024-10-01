@@ -156,6 +156,55 @@
   overflow: auto;
 }
 
+.changeDelivery {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.btnChangeDelivery {
+  width: 240px;
+  height: 40px;
+  background-color: lightgray;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.btnChangeDeliveryText {
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-weight: 700;
+}
+
+.btnChangeDeliveryTextFirst {
+  left: 25%;
+}
+
+.btnChangeDeliveryTextLast {
+  left: 75%;
+}
+
+.sliderChangeDelivery {
+  width: 120px;
+  height: 36px;
+  background-color: var(--main-orange);
+  border-radius: 18px;
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: 2px;
+  transition: all 250ms ease-in-out;
+}
+
+.sliderChangeDeliveryActive {
+  transform: translateX(100%);
+}
+
 @media (max-width: 650px) {
   .sectionBasketDesktop {
     display: none;

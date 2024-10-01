@@ -1,6 +1,7 @@
 let basketDestopIfOpen = true;
 let basketMobileIfOpen = false;
 let basket = [];
+let delivery = true;
 
 function init() {
   renderContent();
@@ -21,13 +22,37 @@ function renderContent() {
 function renderBasketDestop() {
   let sectionBasketDesktopRef = document.getElementById("sectionBasketDesktop");
   sectionBasketDesktopRef.innerHTML = "";
-  sectionBasketDesktopRef.innerHTML = getTemplateBasketDesktop(basket);
+  sectionBasketDesktopRef.innerHTML = getTemplateBasketDesktop(
+    basket,
+    delivery
+  );
 }
 
 function renderBasketMobile() {
   let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
   sectionBasketMobileRef.innerHTML = "";
-  sectionBasketMobileRef.innerHTML = getTemplateBasketMobile(basket);
+  sectionBasketMobileRef.innerHTML = getTemplateBasketMobile(basket, delivery);
+}
+
+function changeDelivery() {
+  let buttonsDeliveryRef = document.getElementsByClassName(
+    "sliderChangeDelivery"
+  );
+  if (delivery) {
+    for (let i = 0; i < buttonsDeliveryRef.length; i++) {
+      buttonsDeliveryRef[i].classList.add("sliderChangeDeliveryActive");
+    }
+    delivery = false;
+  } else {
+    for (let i = 0; i < buttonsDeliveryRef.length; i++) {
+      buttonsDeliveryRef[i].classList.remove("sliderChangeDeliveryActive");
+    }
+    delivery = true;
+  }
+
+  setTimeout(function () {
+    renderBaskets();
+  }, 300);
 }
 
 /**
@@ -147,6 +172,7 @@ function dineDeleteFromBasket(id) {
 
 function sendOrder() {
   basket = [];
+  delivery = true;
   let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
   sectionBasketMobileRef.classList.remove("sectionBasketMobileOpen");
   dialogOrder.showModal();
@@ -159,5 +185,3 @@ function closeDialog() {
   dialogOrder.close();
   renderBaskets();
 }
-
-// TODO Basket umschalter Liefern/Abholen

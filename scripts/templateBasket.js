@@ -3,19 +3,21 @@
  * @param {[]} basket Array of Dine in the Basket
  * @returns HTML Template for Basket
  */
-function getTemplateBasketDesktop(basket) {
+function getTemplateBasketDesktop(basket, delivery) {
   let template = "";
   if (basket.length > 0) {
     template = `<div class="sticky">
           <h2>Warenkorb</h2>
+          ${getButtonDelivery(delivery)}
           <div class="seperator"></div>
           ${getCardsBasket(basket)}
-          ${getPrices(basket)} 
+          ${getPrices(basket, delivery)} 
           ${getButtonOrder()} 
         </div>`;
   } else {
     template = `<div class="sticky">
     <h2>Warenkorb</h2>
+    ${getButtonDelivery(delivery)}
     <div class="seperator"></div>
     ${getEmptyBasket()}
     </div>`;
@@ -23,31 +25,35 @@ function getTemplateBasketDesktop(basket) {
   return template;
 }
 
-function getTemplateBasketMobile(basket) {
+function getTemplateBasketMobile(basket, delivery) {
   let template = "";
   if (basket.length > 0) {
-    template = `
-          <div class="btnBasketMobile" onclick="toggelBasketMobile()">
+    template = `<div
+        class="btnBasketMobile"
+        onclick="toggelBasketMobile()"
+      >
         <h1>Warenkorb</h1>
       </div>
-      <div class="containerBasket">
-    ${getCardsBasket(basket)} 
-        </div>
-        ${getPrices(basket)}
-        ${getButtonOrder()}`;
+      ${getButtonDelivery(delivery)}
+      <div class="containerBasket">${getCardsBasket(basket)}</div>
+      ${getPrices(basket, delivery)} ${getButtonOrder()}`;
   } else {
     template = `
     <div class="btnBasketMobile" onclick="toggelBasketMobile()">
         <h1>Warenkorb</h1>
       </div>    
+      ${getButtonDelivery(delivery)}
     ${getEmptyBasket()}
         `;
   }
   return template;
 }
 
-function getPrices(basket) {
+function getPrices(basket, delivery) {
   let shippingCosts = 5;
+  if (!delivery) {
+    shippingCosts = 0;
+  }
   let subtotal = calculatSubtotal(basket);
   let total = subtotal + shippingCosts;
   return `<div class="seperator"></div>
@@ -75,6 +81,21 @@ function getEmptyBasket() {
             />
             <p>Wähle leckere Gerichte aus der Karte und bestelle dein Menü</p>
           </div>`;
+}
+
+function getButtonDelivery(delivery) {
+  let classSlider = "sliderChangeDelivery";
+  if (!delivery) {
+    classSlider += " sliderChangeDeliveryActive";
+  }
+
+  return `  <div class="changeDelivery">
+      <div class="btnChangeDelivery" onclick="changeDelivery()">
+      <div class="${classSlider}"></div>
+      <p class="btnChangeDeliveryText btnChangeDeliveryTextFirst">Lieferung</p>
+      <p class="btnChangeDeliveryText btnChangeDeliveryTextLast">Abholen</p>
+      </div>
+    </div>`;
 }
 
 function getCardsBasket(basket) {
