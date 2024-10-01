@@ -35,6 +35,7 @@ function getTemplateBasketMobile(basket, delivery) {
         <h1>Warenkorb</h1>
       </div>
       ${getButtonDelivery(delivery)}
+      <div class="seperator"></div>
       <div class="containerBasket">${getCardsBasket(basket)}</div>
       ${getPrices(basket, delivery)} ${getButtonOrder()}`;
   } else {
@@ -43,6 +44,7 @@ function getTemplateBasketMobile(basket, delivery) {
         <h1>Warenkorb</h1>
       </div>    
       ${getButtonDelivery(delivery)}
+      <div class="seperator"></div>
     ${getEmptyBasket()}
         `;
   }
