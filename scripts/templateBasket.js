@@ -30,9 +30,12 @@ function getTemplateBasketMobile(basket, delivery) {
   if (basket.length > 0) {
     template = `<div
         class="btnBasketMobile"
-        onclick="toggelBasketMobile()"
-      >
+        onclick="toggelBasketMobile()"      >
         <h1>Warenkorb</h1>
+              <div class="basketMobileImg">
+          <img src="./assets/icons/cart-shopping-solid.svg" alt="" />
+          <p class="basketMobileImgCounter">${getCounterBasket(basket)}</p>
+        </div>
       </div>
       ${getButtonDelivery(delivery)}
       <div class="seperator"></div>
@@ -40,13 +43,13 @@ function getTemplateBasketMobile(basket, delivery) {
       ${getPrices(basket, delivery)} ${getButtonOrder()}`;
   } else {
     template = `
-    <div class="btnBasketMobile" onclick="toggelBasketMobile()">
+      <div class="btnBasketMobile" onclick="toggelBasketMobile()">
         <h1>Warenkorb</h1>
-      </div>    
+      </div>
       ${getButtonDelivery(delivery)}
       <div class="seperator"></div>
-    ${getEmptyBasket()}
-        `;
+      ${getEmptyBasket()}
+    `;
   }
   return template;
 }
@@ -162,4 +165,12 @@ function calculatSubtotal(basket) {
     priceSubtotal += basket[i].price * basket[i].quanty;
   }
   return priceSubtotal;
+}
+
+function getCounterBasket(basket) {
+  let counter = 0;
+  for (let i = 0; i < basket.length; i++) {
+    counter += basket[i].quanty;
+  }
+  return counter;
 }
