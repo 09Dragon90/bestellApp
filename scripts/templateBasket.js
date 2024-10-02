@@ -7,20 +7,20 @@ function getTemplateBasketDesktop(basket, delivery) {
   let template = "";
   if (basket.length > 0) {
     template = `<div class="sticky">
-          <h2>Warenkorb</h2>
-          ${getButtonDelivery(delivery)}
-          <div class="seperator"></div>
-          ${getCardsBasket(basket)}
-          ${getPrices(basket, delivery)} 
-          ${getButtonOrder()} 
-        </div>`;
+                  <h2>Warenkorb</h2>
+                  ${getButtonDelivery(delivery)}
+                  <div class="seperator"></div>
+                  ${getCardsBasket(basket)}
+                  ${getPrices(basket, delivery)} 
+                  ${getButtonOrder()} 
+                </div>`;
   } else {
     template = `<div class="sticky">
-    <h2>Warenkorb</h2>
-    ${getButtonDelivery(delivery)}
-    <div class="seperator"></div>
-    ${getEmptyBasket()}
-    </div>`;
+                  <h2>Warenkorb</h2>
+                  ${getButtonDelivery(delivery)}
+                  <div class="seperator"></div>
+                  ${getEmptyBasket()}
+                </div>`;
   }
   return template;
 }
@@ -29,27 +29,27 @@ function getTemplateBasketMobile(basket, delivery) {
   let template = "";
   if (basket.length > 0) {
     template = `<div
-        class="btnBasketMobile"
-        onclick="toggelBasketMobile()"      >
-        <h1>Warenkorb</h1>
-              <div class="basketMobileImg">
-          <img src="./assets/icons/cart-shopping-solid.svg" alt="" />
-          <p class="basketMobileImgCounter">${getCounterBasket(basket)}</p>
-        </div>
-      </div>
-      ${getButtonDelivery(delivery)}
-      <div class="seperator"></div>
-      <div class="containerBasket">${getCardsBasket(basket)}</div>
-      ${getPrices(basket, delivery)} ${getButtonOrder()}`;
+                class="btnBasketMobile"
+                onclick="toggelBasketMobile()"      >
+                  <h1>Warenkorb</h1>
+                  <div class="basketMobileImg">
+                    <img src="./assets/icons/cart-shopping-solid.svg" alt="" />
+                    <p class="basketMobileImgCounter">${getCounterBasket(
+                      basket
+                    )}</p>
+                  </div>
+                </div>
+                ${getButtonDelivery(delivery)}
+                <div class="seperator"></div>
+                <div class="containerBasket">${getCardsBasket(basket)}</div>
+                ${getPrices(basket, delivery)} ${getButtonOrder()}`;
   } else {
-    template = `
-      <div class="btnBasketMobile" onclick="toggelBasketMobile()">
-        <h1>Warenkorb</h1>
-      </div>
-      ${getButtonDelivery(delivery)}
-      <div class="seperator"></div>
-      ${getEmptyBasket()}
-    `;
+    template = `<div class="btnBasketMobile" onclick="toggelBasketMobile()">
+                  <h1>Warenkorb</h1>
+                </div>
+                ${getButtonDelivery(delivery)}
+                <div class="seperator"></div>
+                ${getEmptyBasket()}`;
   }
   return template;
 }
@@ -94,53 +94,58 @@ function getButtonDelivery(delivery) {
     classSlider += " sliderChangeDeliveryActive";
   }
 
-  return `  <div class="changeDelivery">
-      <div class="btnChangeDelivery" onclick="changeDelivery()">
-      <div class="${classSlider}"></div>
-      <p class="btnChangeDeliveryText btnChangeDeliveryTextFirst">Lieferung</p>
-      <p class="btnChangeDeliveryText btnChangeDeliveryTextLast">Abholen</p>
-      </div>
-    </div>`;
+  return `<div class="changeDelivery">
+            <div class="btnChangeDelivery" onclick="changeDelivery()">
+              <div class="${classSlider}"></div>
+              <p class="btnChangeDeliveryText btnChangeDeliveryTextFirst">Lieferung</p>
+              <p class="btnChangeDeliveryText btnChangeDeliveryTextLast">Abholen</p>
+            </div>
+          </div>`;
 }
 
 function getCardsBasket(basket) {
   let template = "";
   for (let i = 0; i < basket.length; i++) {
     template += `<div class="cardBasket">
-            <h4>${basket[i].name}</h4>
-            <div class="cardBasketMenue">
-              <div class="cardBasketNumbers">
-                <div class="basketMenueIcons" onclick="changeDineQuanty('${
-                  basket[i].id
-                }', false)">
-                  <img
-                    src="./assets/icons/minus-solid.svg"
-                    alt="Button Minus"
-                  />
-                </div>
-                <p class="cardBasketQuanty">${basket[i].quanty}x</p>
-                <div class="basketMenueIcons" onclick="changeDineQuanty('${
-                  basket[i].id
-                }', true)">
-                  <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
-                </div>
-              </div>
-              <p>${calculatPriceDine(basket[i].price, basket[i].quanty)} €</p>
-              <div class="basketMenueIcons" onclick="dineDeleteFromBasket('${
-                basket[i].id
-              }')">
-                <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
-              </div>
-            </div>
-          </div>`;
+                  <h4>${basket[i].name}</h4>
+                    <div class="cardBasketMenue">
+                      <div class="cardBasketNumbers">
+                        <div class="basketMenueIcons" onclick="changeDineQuanty('${
+                          basket[i].id
+                        }', false)">
+                          <img
+                            src="./assets/icons/minus-solid.svg"
+                            alt="Button Minus"
+                          />
+                        </div>
+                        <p class="cardBasketQuanty">${basket[i].quanty}x</p>
+                      <div class="basketMenueIcons" onclick="changeDineQuanty('${
+                        basket[i].id
+                      }', true)">
+                        <img src="./assets/icons/plus-solid.svg" alt="Button Plus" />
+                      </div>
+                    </div>
+                    <p>${calculatPriceDine(
+                      basket[i].price,
+                      basket[i].quanty
+                    )} €</p>
+                    <div class="basketMenueIcons" onclick="dineDeleteFromBasket('${
+                      basket[i].id
+                    }')">
+                      <img src="./assets/icons/trash-can-regular.svg" alt="Trash" />
+                    </div>
+                  </div>
+                </div>`;
   }
   return template;
 }
 
 function getButtonOrder() {
   return `<div class="orderBasket">
-  <div class="btnOrderBasket" onclick="sendOrder()"><p>Bestellung abschicken</p></div>
-  </div>`;
+            <div class="btnOrderBasket" onclick="sendOrder()">
+              <p>Bestellung abschicken</p>
+            </div>
+          </div>`;
 }
 
 /**

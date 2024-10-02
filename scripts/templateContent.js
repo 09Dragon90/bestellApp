@@ -5,29 +5,29 @@
  */
 function getTemplateContent(content) {
   let template = `<div class="contentHeader">
-          <div class="contentHeaderImgWrapper">
-            <img
-              class="contentHeaderImg"
-              src="./assets/img/pizzaria-header.jpg"
-              alt="Header Bild"
-            />
-            <img
-              class="contentHeaderLogo"
-              src="./assets/img/pizzarie-logo.png"
-              alt="Header Logo"
-            />
-          </div>
-          <div class="container">
-            <h2 class="contentHeaderName">Pizzaria Delizioso</h2>
-            <p class="textEvaluation">Bewertung (4,3 von 5 Sternen)</p>
-          </div>
-          <div class="categories">
-          ${getTemplateCategories(content)}            
-          </div>
-          <div class="dishes container">
-          ${getTemplateDishesCategorie(content)}            
-          </div>
-        </div>`;
+                    <div class="contentHeaderImgWrapper">
+                      <img
+                        class="contentHeaderImg"
+                        src="./assets/img/pizzaria-header.jpg"
+                        alt="Header Bild"
+                      />
+                      <img
+                        class="contentHeaderLogo"
+                        src="./assets/img/pizzarie-logo.png"
+                        alt="Header Logo"
+                      />
+                    </div>
+                    <div class="container">
+                      <h2 class="contentHeaderName">Pizzaria Delizioso</h2>
+                      <p class="textEvaluation">Bewertung (4,3 von 5 Sternen)</p>
+                    </div>
+                    <div class="categories">
+                    ${getTemplateCategories(content)}            
+                    </div>
+                    <div class="dishes container">
+                    ${getTemplateDishesCategorie(content)}            
+                    </div>
+                  </div>`;
 
   return template;
 }
@@ -60,15 +60,17 @@ function getTemplateDishesCategorie(arrayOfCategories) {
 
 function getTemplateDish(dine) {
   let template = `<h3>${dine.name}</h3>
-              <img
-                class="dishAddToBasket"
-                src="./assets/icons/plus-solid.svg"
-                alt="AddToBasket"
-              />
-              <p class="containerDishIngredient">
-                mit ${formatIngredient(dine.ingredient)}
-              </p>
-              <p class="containerDishPrice">${formatPrice(dine.price)} €</p>`;
+                  <img
+                    class="dishAddToBasket"
+                    src="./assets/icons/plus-solid.svg"
+                    alt="AddToBasket"
+                  />
+                  <p class="containerDishIngredient">
+                    mit ${formatIngredient(dine.ingredient)}
+                  </p>
+                  <p class="containerDishPrice">${formatPrice(
+                    dine.price
+                  )} €</p>`;
   return template;
 }
 
