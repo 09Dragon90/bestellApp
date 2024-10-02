@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.json" />
     <title>Bestell App</title>
-  </head>
+  </head id="top">
   <body id="body" onload="init()" onresize="resizeBody(event)">
     <dialog onclick="closeDialog()" id="dialogOrder">
       <h1>Vielen Dank</h1>
@@ -36,9 +36,12 @@
       <section id="sectionBasketDesktop" class="sectionBasketDesktop"></section>
     </main>
     <div id="sectionBasketMobile" class="sectionBasketMobile"></div>
-    <!-- TODO Anzahl der Artikel im Warenkorb anzeigen mit Icon -->
 
-    <footer>...Inhalter Footer...</footer>
+    <footer>
+      <img class="footerLogo" src="./assets/img/Logo.png" alt="Logo" />
+      <a class="footerLink" href="#top"><img src="./assets/icons/circle-up-solid.svg" alt="Up"></a>
+    </footer>
+
     <script src="./scripts/db.js"></script>
     <script src="./scripts/templateBasket.js"></script>
     <script src="./scripts/templateContent.js"></script>

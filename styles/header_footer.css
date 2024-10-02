@@ -25,6 +25,21 @@ footer {
   justify-content: center;
   align-items: center;
   color: white;
+  position: relative;
+}
+
+.footerLogo {
+  height: 80%;
+}
+
+.footerLink {
+  position: absolute;
+  height: 50%;
+  right: 24px;
+}
+
+.footerLink img {
+  height: 100%;
 }
 
 @media (max-width: 650px) {
