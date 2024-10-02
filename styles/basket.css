@@ -142,11 +142,33 @@
   margin-top: 16px;
   margin-bottom: 16px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
 }
 
 .btnBasketMobile h1 {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.basketMobileImg {
+  height: 60%;
+  position: relative;
+}
+
+.basketMobileImg > img {
+  height: 100%;
+}
+
+.basketMobileImgCounter {
+  color: var(--main-orange);
+  font-weight: 700;
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
 
 .containerBasket {
