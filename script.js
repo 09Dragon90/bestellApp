@@ -68,16 +68,13 @@ function formatPrice(price) {
  * Open and Close the Destop Basket with Button
  */
 function toggelBasket() {
-  let sectionContentRef = document.getElementById("sectionContent");
-  let sectionBasketRef = document.getElementById("sectionBasketDesktop");
-
   if (basketDestopIfOpen) {
-    sectionBasketRef.classList.add("dNone");
-    sectionContentRef.classList.add("fullContent");
+    addClass("sectionBasketDesktop", "dNone");
+    addClass("sectionContent", "fullContent");
     basketDestopIfOpen = false;
   } else {
-    sectionBasketRef.classList.remove("dNone");
-    sectionContentRef.classList.remove("fullContent");
+    removeClass("sectionBasketDesktop", "dNone");
+    removeClass("sectionContent", "fullContent");
     basketDestopIfOpen = true;
   }
 }
@@ -86,18 +83,25 @@ function toggelBasket() {
  * Open and Close the Mobile Basket with Button
  */
 function toggelBasketMobile() {
-  let sectionBasketMobileRef = document.getElementById("sectionBasketMobile");
-  let bodyRef = document.getElementById("body");
-
   if (!basketMobileIfOpen) {
-    sectionBasketMobileRef.classList.add("sectionBasketMobileOpen");
-    bodyRef.classList.add("noScrollbar");
+    addClass("sectionBasketMobile", "sectionBasketMobileOpen");
+    addClass("body", "noScrollbar");
     basketMobileIfOpen = true;
   } else {
-    sectionBasketMobileRef.classList.remove("sectionBasketMobileOpen");
-    bodyRef.classList.remove("noScrollbar");
+    removeClass("sectionBasketMobile", "sectionBasketMobileOpen");
+    removeClass("body", "noScrollbar");
     basketMobileIfOpen = false;
   }
+}
+
+function removeClass(idRef, nameClass) {
+  let ref = document.getElementById(idRef);
+  ref.classList.remove(nameClass);
+}
+
+function addClass(idRef, nameClass) {
+  let ref = document.getElementById(idRef);
+  ref.classList.add(nameClass);
 }
 
 /**
